@@ -49,10 +49,13 @@ int main(int argc, char **argv)
         test_list_node_1->next_ptr = &test_list_node_2;
         test_list_node_2->next_ptr = &test_list_node_3;
 
-        std::cout << "Linked List: " << test_list_node_0->val << "->" << test_list_node_0->next_ptr->val << std::endl;
+        std::cout << "Linked List: " << test_list_node_0->val << "->" << test_list_node_0->next_ptr->get()->val
+                  << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->val << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->next_ptr->get()->val << std::endl;
 
         my_linked_list_api->instert_list_node(test_list_node_1, test_list_node_4);
 
-        std::cout << "Linked List: " << test_list_node_0->val << "->" << test_list_node_1->val
-                  << "->" << test_list_node_2->val << "->" << test_list_node_3->val << std::endl;
+        std::cout << "Linked List: " << test_list_node_0->val << "->" << test_list_node_0->next_ptr->get()->val
+                  << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->val
+                  << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->next_ptr->get()->val
+                  << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->next_ptr->get()->next_ptr->get()->val << std::endl;
 }
