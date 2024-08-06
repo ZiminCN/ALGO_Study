@@ -1,4 +1,6 @@
+#include "container_adaptor.hpp"
 #include "linked_list.hpp"
+#include "my_iterator.hpp"
 #include "sort.hpp"
 #include <iostream>
 #include <map>
@@ -10,9 +12,11 @@ int main(int argc, char **argv)
 {
         (void)argc;
         (void)argv;
-        std::cout << "Hello, World!" << std::endl;
-
+        std::cout << "load -- sort \r\n     -- linked_list \r\n     -- container_adaptor \r\n     -- my_iterator \r\n"
+                  << std::endl;
         std::shared_ptr<my_srot::MySort> my_sort_api = std::make_shared<my_srot::MySort>();
+        std::shared_ptr<my_container_adaptor::MyContainerAdaptor> my_container_adaptor_api = std::make_shared<my_container_adaptor::MyContainerAdaptor>();
+        std::shared_ptr<my_iterator::MyIterator> my_iterator_api = std::make_shared<my_iterator::MyIterator>();
 
         // Sort
         std::vector<int> nums = {3, 3, 2, 1, 3, 4, 3456, 6, 7, 867, 45, 3245, 2, 123, 0};
@@ -58,4 +62,14 @@ int main(int argc, char **argv)
                   << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->val
                   << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->next_ptr->get()->val
                   << "->" << test_list_node_0->next_ptr->get()->next_ptr->get()->next_ptr->get()->next_ptr->get()->val << std::endl;
+
+        std::cout << "---------------------" << std::endl;
+
+        my_container_adaptor_api->test_stack_LIFO();
+        my_container_adaptor_api->test_queue_FIFO();
+        my_container_adaptor_api->test_bitset();
+        my_container_adaptor_api->test_vector();
+
+        my_iterator_api->test_istream_iterator();
+        my_iterator_api->test_ostream_iterator();
 }

@@ -105,6 +105,12 @@
     "unordered_map": "cpp",
     "variant": "cpp",
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "atomic": "cpp",
+    "stack": "cpp",
+    "charconv": "cpp",
+    "deque": "cpp",
+    "queue": "cpp",
+    "list": "cpp"
   }
 }
